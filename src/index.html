@@ -3,7 +3,135 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="The personal webpage of frontend developer Zoie Boyd." />
         <title>Zoie Boyd</title>
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     </head>
-    <body></body>
+    <body>
+        <div class="stripes left-stripes">
+            <div class="blue-stripe"></div>
+            <div class="yellow-stripe"></div>
+            <div class="pink-stripe"></div>
+        </div>
+
+        <div class="stripes right-stripes">
+            <div class="pink-stripe"></div>
+            <div class="yellow-stripe"></div>
+            <div class="blue-stripe"></div>
+        </div>
+
+        <nav>
+            <h1>
+                <span>Z</span><span>o</span><span>i</span><span>e </span> <span>B</span
+                ><span>o</span><span>y</span><span>d</span>
+            </h1>
+        </nav>
+        <main>
+            <section class="about">
+                <img src="./images/zoie-600.png" class="zoie-img" alt="Zoie" />
+                <p class="greeting">Hello! I'm Zoie</p>
+                <p class="title">Frontend<br />Developer</p>
+                <p class="description">
+                    Dedicated to making the web a more accessible, functional and beautiful place.
+                </p>
+                <button onclick="location.href = '#projects'" type="button" class="projects-btn">
+                    View my work
+                </button>
+            </section>
+            <section class="projects" id="projects">
+                <h2>Projects</h2>
+                <div class="project-cards">
+                    <figure class="project-card">
+                        <img
+                            src="
+                                ./images/battleship-800.png"
+                            alt=""
+                        />
+                        <figcaption>Battleship</figcaption>
+                    </figure>
+                    <figure class="project-card">
+                        <img src="./images/to-do-800.png" alt="" />
+                        <figcaption>To Do</figcaption>
+                    </figure>
+                    <figure class="project-card">
+                        <img src="./images/weather-800.png" alt="" />
+                        <figcaption>Weather App</figcaption>
+                    </figure>
+                    <figure class="project-card">
+                        <img src="./images/tic-tac-toe-800.png" alt="" />
+                        <figcaption>Tic-Tac-Toe</figcaption>
+                    </figure>
+                    <figure class="project-card">
+                        <img src="./images/library-800.png" alt="" />
+                        <figcaption>Library</figcaption>
+                    </figure>
+                    <figure class="project-card">
+                        <img src="./images/calculator-800.png" alt="" />
+                        <figcaption>Calculator</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="social-container">
+                <button
+                    onclick="location.href = 'https://github.com/ZoieBoyd'"
+                    type="button"
+                    class="github-btn img-btn"
+                    aria-label="Open github profile"
+                >
+                    <img src="images/github.svg" alt="" />
+                </button>
+                <button
+                    onclick="location.href = 'https://www.linkedin.com/in/zoie-boyd/'"
+                    type="button"
+                    class="linkedin-btn img-btn"
+                    aria-label="Open linkedin profile"
+                >
+                    <img src="images/linkedin.svg" alt="" />
+                </button>
+                <button
+                    onclick="location.href = 'mailto:zoieboyd@outlook.com'"
+                    type="button"
+                    class="email-btn img-btn"
+                    aria-label="Send email to Zoie"
+                >
+                    <img src="images/email.svg" alt="" />
+                </button>
+            </div>
+            <p class="credit">Website designed and developed by Zoie Boyd © 2026</p>
+        </footer>
+    </body>
+
+    <script>
+        // Adobe Fonts Web Project Installation
+        (function (d) {
+            var config = {
+                    kitId: "rsr0ghg",
+                    scriptTimeout: 3000,
+                    async: true,
+                },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || (a && a != "complete" && a != "loaded")) return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config);
+                } catch (e) {}
+            };
+            s.parentNode.insertBefore(tk, s);
+        })(document);
+    </script>
 </html>

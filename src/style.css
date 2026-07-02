@@ -1,0 +1,261 @@
+:root {
+    --cottage-cheese: #fefcf6;
+    --english-rose: #f8acc6;
+    --indian-red: #c96863;
+    --gold: #f6d68f;
+    --tea-green: #d4f2a6;
+    --camo-green: #5b6746;
+    --dark-camo-green: #474f36;
+    --pale-blue: #d8e2ee;
+    --lavender: #dac5e2;
+
+    --stripes-width: 3.5vw;
+
+    --box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+}
+
+body {
+    background-color: var(--cottage-cheese);
+    color: var(--camo-green);
+}
+
+.stripes {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 999;
+    width: var(--stripes-width);
+}
+
+.right-stripes {
+    right: 0;
+}
+
+.stripes > div {
+    width: 33.33%;
+}
+
+.pink-stripe {
+    background-color: var(--english-rose);
+}
+
+.yellow-stripe {
+    background-color: var(--gold);
+}
+
+.blue-stripe {
+    background-color: var(--pale-blue);
+}
+
+nav,
+main,
+footer {
+    padding-inline: var(--stripes-width);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.projects {
+    flex-direction: column;
+    align-content: center;
+}
+
+h1 {
+    font-family: "ohno-blazeface", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    -webkit-text-stroke: 5px var(--indian-red);
+    paint-order: stroke fill;
+    font-size: 4rem;
+}
+
+h1 span:nth-child(5n + 1) {
+    color: var(--english-rose);
+}
+
+h1 span:nth-child(5n + 2) {
+    color: var(--tea-green);
+}
+
+h1 span:nth-child(5n + 3) {
+    color: var(--gold);
+}
+
+h1 span:nth-child(5n + 4) {
+    color: var(--pale-blue);
+}
+
+h1 span:nth-child(5n + 5) {
+    color: var(--lavender);
+}
+
+h2,
+.greeting,
+.title {
+    font-family: "aktiv-grotesk", sans-serif;
+    font-style: normal;
+}
+
+h2,
+.title {
+    font-weight: 700;
+}
+
+.zoie-img {
+    width: clamp(200px, 75%, 500px);
+    height: auto;
+}
+
+.title,
+.greeting,
+.description {
+    margin: 0rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+}
+
+.greeting {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.description {
+    line-height: 1.4rem;
+}
+
+.description,
+.projects-btn,
+.credit {
+    font-family: antarctican-mono, sans-serif;
+    font-style: normal;
+}
+
+.description,
+.credit {
+    font-weight: 400;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project-card:nth-child(4n + 1) {
+    background-color: var(--english-rose);
+}
+
+.project-card:nth-child(4n + 2) {
+    background-color: var(--gold);
+}
+
+.project-card:nth-child(4n + 3) {
+    background-color: var(--pale-blue);
+}
+
+.project-card:nth-child(4n + 4) {
+    background-color: var(--lavender);
+}
+
+.project-card {
+    margin: 1rem;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.project-card > img {
+    width: 100%;
+    height: auto;
+}
+
+.project-card > figcaption {
+    font-family: shantell-sans-normal, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+.about,
+footer {
+    background-color: var(--tea-green);
+}
+
+footer {
+    border: 3px solid var(--indian-red);
+    margin: 2rem 0 1rem 0;
+    padding: 1rem calc(var(--stripes-width) + 1rem);
+}
+
+.img-btn {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --stripes-width: 8vw;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    nav {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        width: 30%;
+        line-height: 1.8rem;
+        -webkit-text-stroke: 4px var(--indian-red);
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw;
+        box-shadow: var(--box-shadow);
+        gap: 1rem;
+    }
+
+    .project-cards {
+        gap: 0rem;
+        grid-template-columns: 1fr;
+    }
+
+    .social-container > .img-btn > img {
+        width: 3rem;
+    }
+}
+
+.projects-btn {
+    background-color: var(--english-rose);
+    border: transparent;
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 4px 4px 0px 0px var(--camo-green);
+    color: var(--dark-camo-green);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
