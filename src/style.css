@@ -19,12 +19,28 @@ body {
     color: var(--camo-green);
 }
 
+.skip-link {
+    position: fixed;
+    z-index: 2;
+    background-color: var(--english-rose);
+    color: var(--dark-camo-green);
+    padding: 0.7rem;
+    border: 1px solid var(--dark-camo-green);
+    font-weight: 600;
+    font-size: 1.2rem;
+    top: -50vh;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 .stripes {
     position: fixed;
     top: 0;
     bottom: 0;
     display: flex;
-    z-index: 999;
+    z-index: 1;
     width: var(--stripes-width);
 }
 
@@ -48,7 +64,7 @@ body {
     background-color: var(--pale-blue);
 }
 
-nav,
+header,
 main,
 footer {
     padding-inline: var(--stripes-width);
@@ -60,20 +76,54 @@ main {
     gap: 2rem;
 }
 
-nav {
+header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    border: 3px, solid, var(--indian-red);
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    width: calc(100vw - (var(--stripes-width) * 2));
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    font-size: 1.7rem;
+    color: var(--camo-green);
+    text-decoration: none;
+}
+
+.about {
+    display: grid;
+    grid-template-areas:
+        "greeting avatar"
+        "title avatar"
+        "description avatar"
+        "button avatar";
+    grid-template-columns: 0.6fr 0.4fr;
+    box-shadow: var(--box-shadow);
 }
 
 .projects {
     flex-direction: column;
     align-content: center;
+    text-align: center;
 }
-
-h1 {
+h1,
+nav {
     font-family: "ohno-blazeface", sans-serif;
     font-weight: 100;
     font-style: normal;
+}
+h1 {
     -webkit-text-stroke: 5px var(--indian-red);
     paint-order: stroke fill;
     font-size: 4rem;
@@ -114,6 +164,7 @@ h2,
 .zoie-img {
     width: clamp(200px, 75%, 500px);
     height: auto;
+    grid-area: avatar;
 }
 
 .title,
@@ -125,20 +176,24 @@ h2,
 .title {
     font-size: 2.2rem;
     line-height: 2.2rem;
+    grid-area: title;
 }
 
 .greeting {
     font-size: 1.3rem;
     font-weight: 600;
+    grid-area: greeting;
 }
 
 .description {
     line-height: 1.4rem;
+    grid-area: description;
 }
 
 .description,
 .projects-btn,
-.credit {
+.credit,
+.skip-link {
     font-family: antarctican-mono, sans-serif;
     font-style: normal;
 }
@@ -198,6 +253,9 @@ footer {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 3px solid var(--indian-red);
     margin: 2rem 0 1rem 0;
     padding: 1rem calc(var(--stripes-width) + 1rem);
@@ -207,45 +265,6 @@ footer {
     background-color: transparent;
     border: none;
     width: fit-content;
-}
-
-@media (max-width: 600px) {
-    :root {
-        --stripes-width: 8vw;
-    }
-
-    body {
-        text-align: center;
-    }
-
-    nav {
-        padding: 0.5rem;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-        width: 30%;
-        line-height: 1.8rem;
-        -webkit-text-stroke: 4px var(--indian-red);
-    }
-
-    .about {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5vw;
-        box-shadow: var(--box-shadow);
-        gap: 1rem;
-    }
-
-    .project-cards {
-        gap: 0rem;
-        grid-template-columns: 1fr;
-    }
-
-    .social-container > .img-btn > img {
-        width: 3rem;
-    }
 }
 
 .projects-btn {
@@ -258,4 +277,66 @@ footer {
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    grid-area: button;
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .about,
+    .projects {
+        padding-inline: 6vw;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .about {
+        grid-template-areas:
+            "avatar"
+            "greeting"
+            "title"
+            "description"
+            "button";
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        justify-items: center;
+        padding: 5vw;
+    }
+
+    body {
+        text-align: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    :root {
+        --stripes-width: 8vw;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        max-width: 30%;
+        line-height: 1.8rem;
+        -webkit-text-stroke: 4px var(--indian-red);
+    }
+
+    .project-cards {
+        gap: 0rem;
+        grid-template-columns: 1fr;
+    }
+
+    .social-container > .img-btn > img {
+        width: 3rem;
+    }
 }

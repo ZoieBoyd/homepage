@@ -8,6 +8,7 @@
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     </head>
     <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
         <div class="stripes left-stripes">
             <div class="blue-stripe"></div>
             <div class="yellow-stripe"></div>
@@ -19,15 +20,21 @@
             <div class="yellow-stripe"></div>
             <div class="blue-stripe"></div>
         </div>
-
-        <nav>
+        <header>
             <h1>
                 <span>Z</span><span>o</span><span>i</span><span>e </span> <span>B</span
                 ><span>o</span><span>y</span><span>d</span>
             </h1>
-        </nav>
-        <main>
-            <section class="about">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <section class="about" id="about">
                 <img src="./images/zoie-600.png" class="zoie-img" alt="Zoie" />
                 <p class="greeting">Hello! I'm Zoie</p>
                 <p class="title">Frontend<br />Developer</p>
@@ -72,7 +79,7 @@
                 </div>
             </section>
         </main>
-        <footer>
+        <footer id="contact">
             <div class="social-container">
                 <button
                     onclick="location.href = 'https://github.com/ZoieBoyd'"
