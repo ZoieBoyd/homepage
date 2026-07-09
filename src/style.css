@@ -245,6 +245,7 @@ h2,
     font-weight: 300;
     font-style: normal;
     font-size: 1.2rem;
+    color: var(--dark-camo-green);
 }
 
 .about,
@@ -288,9 +289,33 @@ footer {
     .projects {
         padding-inline: 6vw;
     }
+
+    .project-card {
+        transition: transform 0.2s;
+    }
+
+    .project-card:nth-child(4n + 1) {
+        transform: rotate(1deg);
+    }
+
+    .project-card:nth-child(4n + 2) {
+        transform: rotate(-2deg);
+    }
+
+    .project-card:nth-child(4n + 3) {
+        transform: rotate(-2deg);
+    }
+
+    .project-card:nth-child(4n + 4) {
+        transform: rotate(1deg);
+    }
+
+    .project-card:hover {
+        transform: rotate(0deg) scale(1.05);
+    }
 }
 
-/* Tablet */
+/* Excludes desktop screens */
 @media (max-width: 1024px) {
     .about {
         grid-template-areas:
@@ -307,6 +332,29 @@ footer {
 
     body {
         text-align: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 750px) and (max-width: 1024px) {
+    .projects {
+        padding-inline: 2.5vw;
+    }
+
+    .project-card:nth-child(4n + 1) {
+        transform: rotate(2deg);
+    }
+
+    .project-card:nth-child(4n + 2) {
+        transform: rotate(-3deg);
+    }
+
+    .project-card:nth-child(4n + 3) {
+        transform: rotate(-3deg);
+    }
+
+    .project-card:nth-child(4n + 4) {
+        transform: rotate(2deg);
     }
 }
 
