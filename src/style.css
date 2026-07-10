@@ -96,7 +96,7 @@ nav ul {
 
 nav ul li a:link,
 nav ul li a:visited {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: var(--camo-green);
     text-decoration: none;
 }
@@ -108,8 +108,10 @@ nav ul li a:visited {
         "title avatar"
         "description avatar"
         "button avatar";
-    grid-template-columns: 0.6fr 0.4fr;
+    grid-template-columns: 0.55fr 0.45fr;
     box-shadow: var(--box-shadow);
+    align-items: center;
+    padding: 13vh 0;
 }
 
 .projects {
@@ -123,10 +125,11 @@ nav {
     font-weight: 100;
     font-style: normal;
 }
+
 h1 {
     -webkit-text-stroke: 5px var(--indian-red);
     paint-order: stroke fill;
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 1.6rem + 2.5vw, 4rem);
 }
 
 h1 span:nth-child(5n + 1) {
@@ -165,6 +168,7 @@ h2,
     width: clamp(200px, 75%, 500px);
     height: auto;
     grid-area: avatar;
+    justify-self: center;
 }
 
 .title,
@@ -174,19 +178,20 @@ h2,
 }
 
 .title {
-    font-size: 2.2rem;
-    line-height: 2.2rem;
+    font-size: clamp(2.2rem, 1.2rem + 4vw, 4.5rem);
+    line-height: clamp(2.2rem, 1.6rem + 2.7vw, 4rem);
     grid-area: title;
 }
 
 .greeting {
-    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 1.045rem + 1.061vw, 2rem);
     font-weight: 600;
     grid-area: greeting;
 }
 
 .description {
-    line-height: 1.4rem;
+    font-size: clamp(1rem, 0.818rem + 0.758vw, 1.5rem);
+    line-height: clamp(1.4rem, 1.255rem + 0.606vw, 1.8rem);
     grid-area: description;
 }
 
@@ -244,7 +249,7 @@ h2,
     font-family: shantell-sans-normal, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.85rem);
     color: var(--dark-camo-green);
 }
 
@@ -272,7 +277,7 @@ footer {
     background-color: var(--english-rose);
     border: transparent;
     border-radius: 5px;
-    padding: 0.5rem 0.75rem;
+    padding: 1rem 1.4rem;
     box-shadow: 4px 4px 0px 0px var(--camo-green);
     color: var(--dark-camo-green);
     font-weight: 600;
@@ -373,7 +378,6 @@ footer {
     }
 
     h1 {
-        font-size: 2.2rem;
         max-width: 30%;
         line-height: 1.8rem;
         -webkit-text-stroke: 4px var(--indian-red);
@@ -382,6 +386,10 @@ footer {
     .project-cards {
         gap: 0rem;
         grid-template-columns: 1fr;
+    }
+
+    .projects-btn {
+        padding: 0.5rem 0.75rem;
     }
 
     .social-container > .img-btn > img {
