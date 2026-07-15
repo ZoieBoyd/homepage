@@ -102,15 +102,15 @@ nav ul {
     width: calc(100vw - (var(--stripes-width) * 2));
 }
 
-nav ul li a:link,
-nav ul li a:visited {
+.nav-option:link,
+.nav-option:visited {
     font-size: 2rem;
     color: var(--camo-green);
     text-decoration: none;
 }
 
-nav ul li a:hover,
-nav ul li a:active {
+.nav-option:hover,
+.nav-option:active {
     color: var(--dark-camo-green);
 }
 
@@ -361,6 +361,9 @@ footer {
 
 /* Tablet */
 @media (min-width: 750px) and (max-width: 1024px) {
+    :root {
+        --stripes-width: 6vw;
+    }
     .projects {
         padding-inline: 2.5vw;
     }
@@ -439,13 +442,13 @@ footer {
     nav {
         display: flex;
         position: fixed;
-        right: -450px;
+        right: -600px;
         z-index: 2;
         background-color: var(--tea-green);
         height: 100vh;
         width: 100%;
         border: none;
-        transition: 0.4s ease;
+        transition: 0.5s ease;
     }
 
     nav.active {
@@ -461,8 +464,8 @@ footer {
         margin-bottom: auto;
     }
 
-    nav ul li a:link,
-    nav ul li a:visited {
+    .nav-option:link,
+    .nav-option:visited {
         font-size: 2.8rem;
     }
 
