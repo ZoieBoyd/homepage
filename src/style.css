@@ -431,7 +431,7 @@ footer {
     }
 
     .hamburger-btn.active span:nth-child(2) {
-        opacity: 0;
+        opacity: 0.001;
     }
 
     .hamburger-btn.active span:nth-child(3) {
