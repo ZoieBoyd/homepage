@@ -8,14 +8,13 @@
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     </head>
     <body>
-        <a class="skip-link" href="#main">Skip to main content</a>
-        <div class="stripes left-stripes">
+        <a class="skip-link mono" href="#main">Skip to main content</a>
+        <div class="stripes left-stripes observable">
             <div class="blue-stripe"></div>
             <div class="yellow-stripe"></div>
             <div class="pink-stripe"></div>
         </div>
-
-        <div class="stripes right-stripes">
+        <div class="stripes right-stripes observable">
             <div class="pink-stripe"></div>
             <div class="yellow-stripe"></div>
             <div class="blue-stripe"></div>
@@ -26,11 +25,11 @@
                 <span></span>
                 <span></span>
             </button>
-            <h1>
+            <h1 class="observable blazeface">
                 <span>Z</span><span>o</span><span>i</span><span>e </span> <span>B</span
                 ><span>o</span><span>y</span><span>d</span>
             </h1>
-            <nav>
+            <nav class="observable blazeface">
                 <ul>
                     <li><a class="nav-option" href="#about">About</a></li>
                     <li><a class="nav-option" href="#projects">Projects</a></li>
@@ -42,23 +41,32 @@
             <section class="about" id="about">
                 <img
                     src="./images/zoie-600.webp"
-                    class="zoie-img"
+                    class="zoie-img observable"
                     alt="Zoie"
                     fetchpriority="high"
                 />
-                <p class="greeting">Hello! I'm Zoie</p>
-                <p class="title">Frontend<br />Developer</p>
-                <p class="description">
+                <p class="greeting observable grotesk">Hello! I'm Zoie</p>
+                <p class="title observable grotesk">Frontend Developer</p>
+                <p class="description observable mono">
                     Dedicated to making the web a more accessible, functional and beautiful place.
                 </p>
-                <button onclick="location.href = '#projects'" type="button" class="projects-btn">
+                <button
+                    onclick="location.href = '#projects'"
+                    type="button"
+                    class="projects-btn observable mono"
+                >
                     View my work
                 </button>
             </section>
             <section class="projects" id="projects">
-                <h2>Projects</h2>
+                <h2 class="observable grotesk">Projects</h2>
+                <p class="handwritten section-subtitle">(Click a card to learn more!)</p>
                 <div class="project-cards">
-                    <figure class="project-card">
+                    <figure
+                        class="project-card observable handwritten"
+                        id="battleship"
+                        tabindex="0"
+                    >
                         <img
                             src="
                                 ./images/battleship-800.webp"
@@ -66,30 +74,79 @@
                         />
                         <figcaption>Battleship</figcaption>
                     </figure>
-                    <figure class="project-card">
+                    <figure class="project-card observable handwritten" id="todo" tabindex="0">
                         <img src="./images/to-do-800.webp" alt="" />
                         <figcaption>To Do</figcaption>
                     </figure>
-                    <figure class="project-card">
+                    <figure class="project-card observable handwritten" id="weather" tabindex="0">
                         <img src="./images/weather-800.webp" alt="" />
                         <figcaption>Weather App</figcaption>
                     </figure>
-                    <figure class="project-card">
+                    <figure class="project-card observable handwritten" id="tictactoe" tabindex="0">
                         <img src="./images/tic-tac-toe-800.webp" alt="" />
                         <figcaption>Tic-Tac-Toe</figcaption>
                     </figure>
-                    <figure class="project-card">
+                    <figure class="project-card observable handwritten" id="library" tabindex="0">
                         <img src="./images/library-800.webp" alt="" />
                         <figcaption>Library</figcaption>
                     </figure>
-                    <figure class="project-card">
+                    <figure
+                        class="project-card observable handwritten"
+                        id="calculator"
+                        tabindex="0"
+                    >
                         <img src="./images/calculator-800.webp" alt="" />
                         <figcaption>Calculator</figcaption>
                     </figure>
                 </div>
             </section>
+            <section class="contact" id="contact">
+                <h2 class="observable grotesk">Contact</h2>
+                <p class="handwritten section-subtitle">(I would love to hear from you!)</p>
+                <form action="https://formspree.io/f/mzepbrza" method="POST">
+                    <p id="name-field">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            maxlength="70"
+                            class="grotesk contact-input"
+                            required
+                            aria-required="true"
+                            placeholder="Name"
+                        />
+                        <label for="name" class="mono">Name</label>
+                    </p>
+                    <p id="email-field">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            maxlength="254"
+                            class="grotesk contact-input"
+                            required
+                            aria-required="true"
+                            placeholder="Email"
+                        />
+                        <label for="email" class="mono">Email</label>
+                    </p>
+                    <p id="message-field">
+                        <textarea
+                            rows="5"
+                            name="message"
+                            id="message"
+                            class="grotesk contact-input"
+                            required
+                            aria-required="true"
+                            placeholder="Message"
+                        ></textarea>
+                        <label for="message" class="mono">Message</label>
+                    </p>
+                    <button type="submit" class="mono submit-btn" id="submit-btn">Submit</button>
+                </form>
+            </section>
         </main>
-        <footer id="contact">
+        <footer>
             <div class="social-container">
                 <button
                     onclick="location.href = 'https://github.com/ZoieBoyd'"
@@ -116,10 +173,9 @@
                     <img src="images/email.svg" alt="" />
                 </button>
             </div>
-            <p class="credit">Website designed and developed by Zoie Boyd © 2026</p>
+            <p class="credit mono">Website designed and developed by Zoie Boyd © 2026</p>
         </footer>
     </body>
-
     <script>
         // Adobe Fonts Web Project Installation
         (function (d) {
