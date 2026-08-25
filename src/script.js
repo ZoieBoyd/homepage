@@ -23,13 +23,14 @@ for (const card of projectCards) {
     const closeBtn = card.querySelector(".close-project");
     const cardFront = card.querySelector(".card-front");
 
-    cardFront.addEventListener("click", () => {
-        card.classList.add("back-visible");
-    });
+    const openCard = () => card.classList.add("back-visible");
+    const closeCard = () => card.classList.remove("back-visible");
 
-    closeBtn.addEventListener("click", () => {
-        card.classList.remove("back-visible");
+    cardFront.addEventListener("click", openCard);
+    card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") openCard();
     });
+    closeBtn.addEventListener("click", closeCard);
 }
 
 observeSections();
