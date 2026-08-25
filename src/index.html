@@ -9,12 +9,12 @@
     </head>
     <body>
         <a class="skip-link mono" href="#main">Skip to main content</a>
-        <div class="stripes left-stripes observable">
+        <div class="stripes left-stripes">
             <div class="blue-stripe"></div>
             <div class="yellow-stripe"></div>
             <div class="pink-stripe"></div>
         </div>
-        <div class="stripes right-stripes observable">
+        <div class="stripes right-stripes">
             <div class="pink-stripe"></div>
             <div class="yellow-stripe"></div>
             <div class="blue-stripe"></div>
@@ -25,11 +25,11 @@
                 <span></span>
                 <span></span>
             </button>
-            <h1 class="observable blazeface">
+            <h1 class="blazeface">
                 <span>Z</span><span>o</span><span>i</span><span>e </span> <span>B</span
                 ><span>o</span><span>y</span><span>d</span>
             </h1>
-            <nav class="observable blazeface">
+            <nav class="blazeface">
                 <ul>
                     <li><a class="nav-option" href="#about">About</a></li>
                     <li><a class="nav-option" href="#projects">Projects</a></li>
@@ -39,71 +39,242 @@
         </header>
         <main id="main">
             <section class="about" id="about">
-                <img
-                    src="./images/zoie-600.webp"
-                    class="zoie-img observable"
-                    alt="Zoie"
-                    fetchpriority="high"
-                />
+                <div class="zoie-img-container observable">
+                    <img
+                        src="./images/zoie-600.webp"
+                        class="zoie-img"
+                        alt="Zoie"
+                        fetchpriority="high"
+                    />
+                </div>
                 <p class="greeting observable grotesk">Hello! I'm Zoie</p>
                 <p class="title observable grotesk">Frontend Developer</p>
                 <p class="description observable mono">
                     Dedicated to making the web a more accessible, functional and beautiful place.
                 </p>
-                <button
-                    onclick="location.href = '#projects'"
-                    type="button"
-                    class="projects-btn observable mono"
-                >
-                    View my work
-                </button>
+                <div class="observable projects-btn-container">
+                    <button
+                        onclick="location.href = '#projects'"
+                        type="button"
+                        class="projects-btn mono"
+                    >
+                        View my work
+                    </button>
+                </div>
             </section>
             <section class="projects" id="projects">
                 <h2 class="observable grotesk">Projects</h2>
-                <p class="handwritten section-subtitle">(Click a card to learn more!)</p>
+                <p class="handwritten section-subtitle observable">(Click a card to learn more!)</p>
                 <div class="project-cards">
-                    <figure
-                        class="project-card observable handwritten"
-                        id="battleship"
-                        tabindex="0"
-                    >
-                        <img
-                            src="
-                                ./images/battleship-800.webp"
-                            alt=""
-                        />
-                        <figcaption>Battleship</figcaption>
-                    </figure>
-                    <figure class="project-card observable handwritten" id="todo" tabindex="0">
-                        <img src="./images/to-do-800.webp" alt="" />
-                        <figcaption>To Do</figcaption>
-                    </figure>
-                    <figure class="project-card observable handwritten" id="weather" tabindex="0">
-                        <img src="./images/weather-800.webp" alt="" />
-                        <figcaption>Weather App</figcaption>
-                    </figure>
-                    <figure class="project-card observable handwritten" id="tictactoe" tabindex="0">
-                        <img src="./images/tic-tac-toe-800.webp" alt="" />
-                        <figcaption>Tic-Tac-Toe</figcaption>
-                    </figure>
-                    <figure class="project-card observable handwritten" id="library" tabindex="0">
-                        <img src="./images/library-800.webp" alt="" />
-                        <figcaption>Library</figcaption>
-                    </figure>
-                    <figure
-                        class="project-card observable handwritten"
-                        id="calculator"
-                        tabindex="0"
-                    >
-                        <img src="./images/calculator-800.webp" alt="" />
-                        <figcaption>Calculator</figcaption>
-                    </figure>
+                    <div class="project-card observable" tabindex="0">
+                        <div class="card-inner">
+                            <figure class="card-front handwritten" id="battleship">
+                                <img
+                                    src="
+                                   ./images/battleship-800.webp"
+                                    alt=""
+                                />
+                                <figcaption>Battleship</figcaption>
+                            </figure>
+                            <div class="card-back">
+                                <div class="card-btns">
+                                    <button
+                                        class="img-btn open-project"
+                                        onclick="
+                                            window.location.href =
+                                                'https://zoieboyd.github.io/battleship/'
+                                        "
+                                    >
+                                        <img src="./images/open-link.svg" />
+                                    </button>
+                                    <button class="img-btn close-project">
+                                        <img src="./images/close.svg" />
+                                    </button>
+                                </div>
+                                <h3 class="grotesk">Battleship</h3>
+                                <p class="grotesk">
+                                    A digital edition of the classic Battleship board game. This
+                                    project's development utilised Jest to write and run tests on
+                                    game logic.
+                                </p>
+                                <div class="project-tags mono">
+                                    <span>Test Driven Development</span><span>AI Logic</span
+                                    ><span>Webpack</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card observable" tabindex="0">
+                        <div class="card-inner">
+                            <figure class="card-front handwritten" id="todo">
+                                <img src="./images/to-do-800.webp" alt="" />
+                                <figcaption>To Do</figcaption>
+                            </figure>
+                            <div class="card-back">
+                                <div class="card-btns">
+                                    <button
+                                        class="img-btn open-project"
+                                        onclick="
+                                            window.location.href =
+                                                'https://zoieboyd.github.io/to-do-list/'
+                                        "
+                                    >
+                                        <img src="./images/open-link.svg" />
+                                    </button>
+                                    <button class="img-btn close-project">
+                                        <img src="./images/close.svg" />
+                                    </button>
+                                </div>
+                                <h3 class="grotesk">To Do</h3>
+                                <p class="grotesk">
+                                    A task management web application the allows users track and
+                                    categorise their to do lists and organise priority level and due
+                                    dates.
+                                </p>
+                                <div class="project-tags mono">
+                                    <span>Object Oriented Programming</span><span>localStorage</span
+                                    ><span>CRUD</span><span>Webpack</span
+                                    ><span>Responsive Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card observable" tabindex="0">
+                        <div class="card-inner">
+                            <figure class="card-front handwritten" id="weather">
+                                <img src="./images/weather-800.webp" alt="" />
+                                <figcaption>Weather App</figcaption>
+                            </figure>
+                            <div class="card-back">
+                                <div class="card-btns">
+                                    <button
+                                        class="img-btn open-project"
+                                        onclick="
+                                            window.location.href =
+                                                'https://zoieboyd.github.io/weather-app/'
+                                        "
+                                    >
+                                        <img src="./images/open-link.svg" />
+                                    </button>
+                                    <button class="img-btn close-project">
+                                        <img src="./images/close.svg" />
+                                    </button>
+                                </div>
+                                <h3 class="grotesk">Weather App</h3>
+                                <p class="grotesk">
+                                    A colourful web application that allows users to view real-time
+                                    weather data from around the globe.
+                                </p>
+                                <div class="project-tags mono">
+                                    <span>REST APIs</span><span>Responsive Design</span
+                                    ><span>Webpack</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card observable" tabindex="0">
+                        <div class="card-inner">
+                            <figure class="card-front handwritten" id="tictactoe">
+                                <img src="./images/tic-tac-toe-800.webp" alt="" />
+                                <figcaption>Tic-Tac-Toe</figcaption>
+                            </figure>
+                            <div class="card-back">
+                                <div class="card-btns">
+                                    <button
+                                        class="img-btn open-project"
+                                        onclick="
+                                            window.location.href =
+                                                'https://zoieboyd.github.io/tic-tac-toe/'
+                                        "
+                                    >
+                                        <img src="./images/open-link.svg" />
+                                    </button>
+                                    <button class="img-btn close-project">
+                                        <img src="./images/close.svg" />
+                                    </button>
+                                </div>
+                                <h3 class="grotesk">Tic-Tac-Toe</h3>
+                                <p class="grotesk">
+                                    A digital version of the classic paper-based game "Tic-Tac-Toe".
+                                </p>
+                                <div class="project-tags mono">
+                                    <span>JavaScript</span> <span>HTML</span> <span>CSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card observable" tabindex="0">
+                        <div class="card-inner">
+                            <figure class="card-front handwritten" id="library">
+                                <img src="./images/library-800.webp" alt="" />
+                                <figcaption>Library</figcaption>
+                            </figure>
+                            <div class="card-back">
+                                <div class="card-btns">
+                                    <button
+                                        class="img-btn open-project"
+                                        onclick="
+                                            window.location.href =
+                                                'https://zoieboyd.github.io/library/'
+                                        "
+                                    >
+                                        <img src="./images/open-link.svg" />
+                                    </button>
+                                    <button class="img-btn close-project">
+                                        <img src="./images/close.svg" />
+                                    </button>
+                                </div>
+                                <h3 class="grotesk">Library</h3>
+                                <p class="grotesk">
+                                    This is a description. It describes the project and what it
+                                    does.
+                                </p>
+                                <div class="project-tags mono">
+                                    <span>Responsive Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card observable" tabindex="0">
+                        <div class="card-inner">
+                            <figure class="card-front handwritten" id="calculator">
+                                <img src="./images/calculator-800.webp" alt="" />
+                                <figcaption>Calculator</figcaption>
+                            </figure>
+                            <div class="card-back">
+                                <div class="card-btns">
+                                    <button
+                                        class="img-btn open-project"
+                                        onclick="
+                                            window.location.href =
+                                                'https://zoieboyd.github.io/calculator/'
+                                        "
+                                    >
+                                        <img src="./images/open-link.svg" />
+                                    </button>
+                                    <button class="img-btn close-project">
+                                        <img src="./images/close.svg" />
+                                    </button>
+                                </div>
+                                <h3 class="grotesk">Calculator</h3>
+                                <p class="grotesk">
+                                    A web-based replica of the iOS calculator interface. Allows
+                                    operation chaining.
+                                </p>
+                                <div class="project-tags mono">
+                                    <span>JavaScript</span> <span>HTML</span> <span>CSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="contact" id="contact">
                 <h2 class="observable grotesk">Contact</h2>
-                <p class="handwritten section-subtitle">(I would love to hear from you!)</p>
-                <form action="https://formspree.io/f/mzepbrza" method="POST">
+                <p class="handwritten section-subtitle observable">
+                    (I would love to hear from you!)
+                </p>
+                <form action="https://formspree.io/f/mzepbrza" method="POST" class="observable">
                     <p id="name-field">
                         <input
                             type="text"

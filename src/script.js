@@ -19,45 +19,17 @@ for (const option of navOptions) {
     });
 }
 
-observeSections();
-
-/*
-const projectData = {
-    battleship: {
-        title: "Battleship",
-        description: "",
-        link: "https://zoieboyd.github.io/battleship/",
-    },
-    todo: {
-        title: "To Do",
-        description: "",
-        link: "https://zoieboyd.github.io/to-do-list/",
-    },
-    weather: {
-        title: "Weather App",
-        description: "",
-        link: "https://zoieboyd.github.io/weather-app/",
-    },
-    tictactoe: {
-        title: "Tic-Tac-Toe",
-        description: "",
-        link: "https://zoieboyd.github.io/tic-tac-toe/",
-    },
-    library: {
-        title: "Library",
-        description: "",
-        link: "https://zoieboyd.github.io/library/",
-    },
-    calculator: {
-        title: "Calculator",
-        description: "",
-        link: "https://zoieboyd.github.io/calculator/",
-    },
-};
-
 for (const card of projectCards) {
-    card.addEventListener("click", () => {
-        console.log(projectData[card.id]);
+    const closeBtn = card.querySelector(".close-project");
+    const cardFront = card.querySelector(".card-front");
+
+    cardFront.addEventListener("click", () => {
+        card.classList.add("back-visible");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        card.classList.remove("back-visible");
     });
 }
-*/
+
+observeSections();
