@@ -8,14 +8,18 @@ const navOptions = document.querySelectorAll(".nav-option");
 const projectCards = document.querySelectorAll(".project-card");
 
 hamburgerBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+    const isOpen = navMenu.classList.toggle("active");
     hamburgerBtn.classList.toggle("active");
+    hamburgerBtn.ariaExpanded = isOpen ? "true" : "false";
+    hamburgerBtn.ariaLabel = isOpen ? "Close navigation menu" : "Open navigation menu";
 });
 
 for (const option of navOptions) {
     option.addEventListener("click", () => {
         navMenu.classList.remove("active");
         hamburgerBtn.classList.remove("active");
+        hamburgerBtn.ariaExpanded = "false";
+        hamburgerBtn.ariaLabel = "Open navigation menu";
     });
 }
 

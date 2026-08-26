@@ -412,10 +412,6 @@ h2 {
     visibility: visible;
 }
 
-.card-btns > .img-btn {
-    transition: all 0.2s;
-}
-
 .card-btns > .img-btn:hover {
     filter: brightness(110%);
     transform: scale(1.05);
@@ -553,6 +549,8 @@ textarea.contact-input + label {
 }
 
 .contact-input {
+    box-sizing: border-box;
+    width: 100%;
     border: var(--camo-green) solid 2px;
     border-radius: 15px;
     font-weight: 400;
@@ -732,6 +730,11 @@ form > p {
 }
 
 @media (max-width: 1024px) {
+    footer,
+    h1 {
+        text-align: center;
+    }
+
     .project-cards {
         grid-template-columns: 1fr;
     }
@@ -740,11 +743,6 @@ form > p {
         text-align: left;
         max-width: calc(80vw - (var(--stripes-width) * 2));
         padding: 1.5rem 1rem;
-    }
-
-    .contact-input {
-        box-sizing: border-box;
-        width: 100%;
     }
 }
 
