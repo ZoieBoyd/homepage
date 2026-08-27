@@ -10,8 +10,13 @@ const projectCards = document.querySelectorAll(".project-card");
 hamburgerBtn.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("active");
     hamburgerBtn.classList.toggle("active");
-    hamburgerBtn.ariaExpanded = isOpen ? "true" : "false";
-    hamburgerBtn.ariaLabel = isOpen ? "Close navigation menu" : "Open navigation menu";
+    if (isOpen) {
+        hamburgerBtn.ariaExpanded = "true";
+        hamburgerBtn.ariaLabel = "Close navigation menu";
+    } else {
+        hamburgerBtn.ariaExpanded = "false";
+        hamburgerBtn.ariaLabel = "Open navigation menu";
+    }
 });
 
 for (const option of navOptions) {
