@@ -6,7 +6,6 @@ const navMenu = document.querySelector("nav");
 const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navOptions = document.querySelectorAll(".nav-option");
 const projectCards = document.querySelectorAll(".project-card");
-const header = document.querySelector("header");
 
 hamburgerBtn.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("active");

@@ -69,6 +69,14 @@
 }
 
 /* || GENERAL STYLES || */
+/* Prevents appearance of FOUC before Adobe Font load*/
+.wf-active {
+    .skip-link,
+    header,
+    main {
+        visibility: visible;
+    }
+}
 
 html {
     scroll-behavior: smooth;
@@ -308,6 +316,7 @@ button:not(.img-btn):not(.hamburger-btn) {
     font-size: clamp(1.3rem, 1.045rem + 1.061vw, 2.3rem);
     font-weight: 600;
     grid-area: greeting;
+    align-self: end;
 }
 
 .description {
@@ -316,7 +325,8 @@ button:not(.img-btn):not(.hamburger-btn) {
     grid-area: description;
     max-width: 50ch;
     animation-delay: 0.4s;
-    color: var(--dark-camo-green);
+
+    align-self: start;
 }
 
 .description,
@@ -442,7 +452,6 @@ textarea.contact-input {
     display: flex;
     grid-area: avatar;
     justify-content: center;
-    max-width: fit-content;
 }
 
 .project-tags {
@@ -475,6 +484,7 @@ textarea.contact-input {
 .projects-btn-container {
     grid-area: button;
     animation-delay: 0.6s;
+    align-self: start;
 }
 
 .projects-btn {
@@ -655,7 +665,7 @@ textarea.contact-input + label {
 
     .about,
     .projects {
-        padding-inline: 6vw;
+        padding-inline: 7vw;
     }
 
     .zoie-img:hover {
@@ -700,10 +710,6 @@ textarea.contact-input + label {
     .social-container > .img-btn:hover {
         filter: brightness(120%);
         transform: scale(1.06);
-    }
-
-    .title {
-        width: 50%;
     }
 
     form {
