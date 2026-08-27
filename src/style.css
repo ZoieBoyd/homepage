@@ -457,7 +457,8 @@ textarea.contact-input {
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.3rem, -0.1rem + 1.6vw, 0.8rem);
+    row-gap: 0.3rem;
+    column-gap: clamp(0.3rem, -0.1rem + 1.6vw, 0.8rem);
 }
 
 .project-tags > span {
