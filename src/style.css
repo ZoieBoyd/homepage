@@ -71,9 +71,11 @@
 /* || GENERAL STYLES || */
 /* Prevents appearance of FOUC before Adobe Font load*/
 .wf-active {
+    .stripes,
     .skip-link,
     header,
-    main {
+    main,
+    footer {
         visibility: visible;
     }
 }
