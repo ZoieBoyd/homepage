@@ -97,7 +97,6 @@ main {
 }
 
 header {
-    position: absolute;
     left: 0;
     right: 0;
     align-items: center;
@@ -237,13 +236,13 @@ button:not(.img-btn):not(.hamburger-btn) {
         "title avatar"
         "description avatar"
         "button avatar";
-    grid-template-columns: 0.55fr 0.45fr;
+    grid-template-columns: 0.6fr 0.4fr;
     box-shadow: var(--box-shadow);
     align-items: center;
     box-sizing: border-box;
-    padding-top: 35vh;
-    padding-bottom: 15vh;
+    align-content: center;
     background-color: var(--tea-green);
+    min-height: calc(100vh - var(--header-height));
 }
 
 .projects {
@@ -306,7 +305,7 @@ button:not(.img-btn):not(.hamburger-btn) {
 }
 
 .greeting {
-    font-size: clamp(1.3rem, 1.045rem + 1.061vw, 2rem);
+    font-size: clamp(1.3rem, 1.045rem + 1.061vw, 2.3rem);
     font-weight: 600;
     grid-area: greeting;
 }
@@ -317,6 +316,7 @@ button:not(.img-btn):not(.hamburger-btn) {
     grid-area: description;
     max-width: 50ch;
     animation-delay: 0.4s;
+    color: var(--dark-camo-green);
 }
 
 .description,
@@ -442,6 +442,7 @@ textarea.contact-input {
     display: flex;
     grid-area: avatar;
     justify-content: center;
+    max-width: fit-content;
 }
 
 .project-tags {
@@ -729,10 +730,9 @@ textarea.contact-input + label {
         grid-template-columns: 1fr;
         gap: 1rem;
         justify-items: center;
-        padding-top: 20vh;
         padding-inline: 3vw;
-        padding-bottom: 15vh;
         text-align: center;
+        padding-bottom: calc(var(--header-height) / 2);
     }
 }
 
@@ -759,7 +759,7 @@ textarea.contact-input + label {
         --stripes-width: 6vw;
     }
     .projects {
-        padding-inline: 2.5vw;
+        padding-inline: 8vw;
     }
 }
 
@@ -911,8 +911,7 @@ textarea.contact-input + label {
     }
 
     .about {
-        margin-top: 4rem;
-        padding-inline: 2rem;
+        padding-inline: 4vw;
     }
 
     .title {
